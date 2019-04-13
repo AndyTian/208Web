@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap_flatly.css">
     <link rel="stylesheet" href="validator/dist/css/bootstrapValidator.css"/>
+    <link rel="icon" href="photos/hicon.png">
 
     <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
@@ -129,6 +130,10 @@
                         },
                         emailAddress: {
                             message: 'Invalid email address!'
+                        },
+                        regexp: {
+                            regexp: /^.*?(edu).*?/,
+                            message: 'You must register with your educational email!'
                         }
                     }
                 },
