@@ -1,0 +1,20 @@
+.navbar-default input[type="text"] {
+    border: none;
+}
+
+.navbar-default .navbar-form {
+    position: relative;
+}
+
+.navbar-default button[type="submit"] {
+    position: absolute;
+    top: 20%;
+    right: 15px;
+    background: none;
+    border: none;
+}
+
+.profile {
+    margin-right: 25px;
+}
+
