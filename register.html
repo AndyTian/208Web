@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap_flatly.css">
+    <link rel="stylesheet" href="validator/dist/css/bootstrapValidator.css"/>
+
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="validator/dist/js/bootstrapValidator.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+    <div class=" row clearfix col-md-6 col-md-offset-3  text-center"
+         style="margin-top: 50px;background-color: rgba(220,220,220,0.4)">
+
+        <div class="page-header">
+            <h1 class="text-center" style="font-size: 40px;padding:40px">
+                Heuristic
+            </h1>
+            <div class="description">
+                <p>
+                    Description...
+                </p>
+            </div>
+        </div>
+        <form id="nameForm" role="form" action="register_password.html">
+            <div>
+
+                <div class="form-group">
+                    <div class="col-md-6 " class="input-group">
+                        <label>Username: </label>
+                        <input id="username" name="username" required="required" type="text" class="form-control"
+                               placeholder="Andy">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-6 column" class="input-group">
+                        <label>E-mail address: </label>
+                        <input id="email" name="email" required="required" type=email class="form-control"
+                               placeholder="123456@qq.com">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+
+                    <label>Identity</label>
+                    <select class="form-control">
+                        <option>Student</option>
+                        <option>Teacher</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group col-md-3 col-sm-3">
+                    <label>Grade</label>
+                    <select class="form-control">
+                        <option>Year 1</option>
+                        <option>Year 2</option>
+                        <option>Year 3</option>
+                        <option>Year 4</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-3 col-sm-3" action="">
+                    <label>Major</label>
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-center" class="form-group" style="padding:10px">
+                <button type="submit" id="btn_submit" name="btn_submit"> Continue</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<!--加图！！！-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nameForm').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                /*validate*/
+                username: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            /*Not empty*/
+                            message: 'Username cannot be empty!'
+                        },
+                        stringLength: {
+                            /*length*/
+                            min: 3,
+                            max: 15,
+                            message: 'Username must contain 3~15 characters'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'Email address cannot be empty!'
+                        },
+                        emailAddress: {
+                            message: 'Invalid email address!'
+                        }
+                    }
+                },
+            }
+        });
+    })
+
+</script>
+
+</body>
+
+</html>
