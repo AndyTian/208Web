@@ -66,16 +66,16 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('#ResetForm').bootstrapValidator({
+        $("#ResetForm").bootstrapValidator({
             message: 'This value is not valid',
             feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
                 validating: 'glyphicon glyphicon-refresh'
             },
-            fields: {
+            fields: {/*validate*/
                 password: {
-                    message: 'Invalid password',
+                    message: 'Invalid',
                     validators: {
                         notEmpty: {
                             message: 'Password cannot be empty!'
@@ -89,36 +89,34 @@
                             field: 'password',
                             message: 'Entered passwords are not identical!'
                         },
-
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'The password can only consist of alphabetical, number, dot and underscore'
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The password can only consist of alphabetical, number, dot and underscore'
+                        }
                     }
-                }
-            },
-            repassword: {
-                message: 'Invalid password',
-                validators: {
-                    notEmpty: {
-                        message: 'Password cannot be empty!'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'Password must contain 6~30 characters'
-                    },
-                    identical: {
-                        field: 'password',
-                        message: 'Entered passwords are not identical!'
-                    },
-
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+                },
+                repassword: {
+                    message: 'Invalid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Password cannot be empty!'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'Password must contain 6~30 characters'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'Entered values are not identical!'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The password can only consist of alphabetical, number, dot and underscore'
+                        }
                     }
-                }
-            },
+                },
+            }
         });
     });
 </script>
